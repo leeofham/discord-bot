@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando')
+const { RichEmbed } = require('discord.js')
 const axios = require('axios')
 
 class getEvent extends commando.Command{
@@ -11,33 +12,28 @@ class getEvent extends commando.Command{
     })
   }
 
-  async run(message){
-    axios.get('http://localhost:4000/events/5d1c7f1e491f0506e2bf5bca')
+  async run(message, args){
+    axios.get(`http://localhost:4000/events/${args}`)
       .then(function reply(res){
-        message.channel.send({embed: {
-          color: 3447003,
-          title: res.data.name,
-          description: `${res.data.description},\n ${res.data.date.substring(0,10)}, ${res.data.startTime}`,
-          fields: [
-            { name: 'Tanks',
-              value: `${res.data.attendees.tanks[0]}\n${res.data.attendees.tanks[1]}`, inline: true
-            },{ name: 'Healers',
-              value: `${res.data.attendees.healers[0]}\n${res.data.attendees.healers[1]}`, inline: true
-            },{ name: 'DDs',
-              value:
-              `${res.data.attendees.dds[0]}
-              ${res.data.attendees.dds[1]}
-              ${res.data.attendees.dds[2]}
-              ${res.data.attendees.dds[3]}
-              ${res.data.attendees.dds[4]}
-              ${res.data.attendees.dds[5]}
-              ${res.data.attendees.dds[6]}
-              ${res.data.attendees.dds[7]}`,
-              inline: true
-            }
-          ]
-        }
-        })
+        const data = res.data
+        const person = res.data.attendees
+        const roster = new RichEmbed()
+          .setColor('#0099ff')
+          .setTitle(`${data.name}`)
+          .setAuthor('Bears Bot', 'http://i.imgur.com/FDxfOww.png')
+          .setDescription(`${data.date.substring(0,10)} at ${data.startTime}pm CEST`)
+          .setThumbnail('http://i.imgur.com/FDxfOww.png')
+          .addField(`${data.description}`, '\u200b')
+          .addField('Tanks', `${person.tanks[0]}\n${person.tanks[1]}`, true)
+          .addField('Healers', `${person.healers[0]}\n${person.healers[1]}`, true)
+          .addField('Damage Dealers', `${person.dds[0]}\n${person.dds[1]}\n${person.dds[2]}\n${person.dds[3]}\n${person.dds[4]}\n${person.dds[5]}\n${person.dds[6]}\n${person.dds[7]}`, true)
+          .setTimestamp()
+          .setFooter(`id: ${data._id}`)
+
+        message.channel.send(roster)
+      })
+      .catch(function error(){
+        message.channel.send('ERROR!! Abbs is gay, blame her for breaking me!')
       })
   }
 }
