@@ -11,7 +11,7 @@ mongoose.connect(dbUri, (err, db) => {
     date: moment.utc('2019-07-03'),
     startTime: '19:00',
     endTime: '22:00',
-    reminder: '1440, 480',
+    reminder: ['1440', '480'],
     attendees: {
       tanks: ['leeofham', 'Alathil'],
       healers: ['Shases', 'Knight30'],
@@ -23,7 +23,7 @@ mongoose.connect(dbUri, (err, db) => {
     date: moment.utc('2019-07-04'),
     startTime: '19:00',
     endTime: '22:00',
-    reminder: '1440, 480',
+    reminder: ['1440', '480'],
     attendees: {
       tanks: ['leeofham', 'Alathil'],
       healers: ['Shases', 'Knight30'],
