@@ -24,7 +24,7 @@ class getEvent extends commando.Command{
           .setDescription(`${data.date.substring(0,10)} at ${data.startTime}pm CEST`)
           .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
           .addField(`${data.description}`, '\u200b')
-          .addField('Tanks', `${person.tanks[0]}\n${person.tanks[1]}`, true)
+          .addField('Tanks', `${person.tanks[0]}      \n${person.tanks[1]}`, true)
           .addField('Healers', `${person.healers[0]}\n${person.healers[1]}`, true)
           .addField('Damage Dealers', `${person.dds[0]}\n${person.dds[1]}\n${person.dds[2]}\n${person.dds[3]}\n${person.dds[4]}\n${person.dds[5]}\n${person.dds[6]}\n${person.dds[7]}`, true)
           .setTimestamp()
