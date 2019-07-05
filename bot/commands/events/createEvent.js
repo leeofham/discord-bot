@@ -8,7 +8,8 @@ class CreateEvent extends commando.Command{
       name: 'create',
       group: 'events',
       memberName: 'create',
-      description: 'Allows users to create event, type !create name, yyyy-mm-dd, startTime(24hr clock), endTime(24hr clock)'
+      description: 'Allows users to create event',
+      userPermissions: ['ADMINISTRATOR']
     })
   }
 

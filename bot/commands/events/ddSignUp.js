@@ -13,7 +13,6 @@ class DDSignUp extends commando.Command{
 
   async run(message, args){
     const userId = message.author.id
-    const role = message.command.name
 
     axios.get(`http://localhost:4000/events/${args}`)
 
@@ -21,13 +20,13 @@ class DDSignUp extends commando.Command{
         const tanks = res.data.tanks
         const healers = res.data.healers
         const dds = res.data.dds
-        if(tanks.indexOf(userId) && healers.indexOf(userId) && dds.indexOf(userId === -1)){
-          const index = role.indexOf('Empty')
+        if(tanks.indexOf(userId) && healers.indexOf(userId) && dds.indexOf(userId) === -1){
+          const index = dds.indexOf('Empty')
           if(index !== -1){
-            role[index] = userId
-            message.channel.send(`<@${userId}>, you have been added as a tank`)
+            dds[index] = userId
+            message.channel.send(`<@${userId}>, you have been added as a dd`)
           } else {
-            message.channel.send(`There are no ${role} spots left`)
+            message.channel.send('There are no dds spots left')
           }
           axios.put(`http://localhost:4000/events/${args}`, {
             dds: dds

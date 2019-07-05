@@ -7,7 +7,8 @@ class AddDescription extends commando.Command{
       name: 'description',
       group: 'events',
       memberName: 'description',
-      description: 'Allows user to add description for event, type !description eventId, "whatever the description is"'
+      description: 'Allows user to add description for event, type !description eventId, "whatever the description is"',
+      userPermissions: ['ADMINISTRATOR']
     })
   }
 
