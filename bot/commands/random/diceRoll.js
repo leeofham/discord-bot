@@ -10,8 +10,8 @@ class DiceRollCommand extends commando.Command{
     })
   }
 
-  async run(message){
-    const roll = Math.floor(Math.random() * 6) + 1
+  async run(message, args){
+    const roll = Math.floor(Math.random() * args) + 1
     message.reply(`You rolled a ${roll}`)
   }
 }

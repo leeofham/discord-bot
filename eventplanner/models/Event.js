@@ -9,7 +9,9 @@ const eventSchema = new mongoose.Schema({
   startTime: {type: String, required: 'Please enter a start time'},
   endTime: {type: String, required: 'Please enter an end time'},
   reminder: {type: Array},
-  attendees: {type: Object}
+  tanks: {type: Array, required: true, default: ['Empty', 'Empty']},
+  healers: {type: Array, required: true, default: ['Empty', 'Empty']},
+  dds: {type: Array, required: true, default: ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty']}
 })
 
 eventSchema.plugin(uniqueValidator)

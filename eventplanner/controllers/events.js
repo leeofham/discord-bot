@@ -22,7 +22,7 @@ function createRoute(req, res, next){
 }
 
 function updateRoute(req, res, next){
-  Event.findById(req.params.id) // find the eventss
+  Event.findById(req.params.id) // find the events
     .then(events => events.set(req.body)) // update the charater
     .then(events => events.save()) // save the eventss
     .then(events => res.json(events)) // send it as JSON
