@@ -7,7 +7,7 @@ class TankSignUp extends commando.Command{
       name: 'tank',
       group: 'events',
       memberName: 'tank',
-      description: 'Allows users to sign up as tank'
+      description: 'Allows users to sign up as tank, type: !tank eventId'
     })
   }
 

@@ -7,7 +7,7 @@ class AddReminder extends commando.Command{
       name: 'reminder',
       group: 'events',
       memberName: 'reminder',
-      description: 'Allows user to add reminder for event'
+      description: 'Allows user to add reminder for event, type !reminder eventId, "reminder times in seconds, more than one reminder separate with comma ,"'
     })
   }
 

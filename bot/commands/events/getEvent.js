@@ -8,7 +8,7 @@ class getEvent extends commando.Command{
       name: 'event',
       group: 'events',
       memberName: 'event',
-      description: 'Gets event data from API'
+      description: 'Gets event data from API, type !event eventId'
     })
   }
 

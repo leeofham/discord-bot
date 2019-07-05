@@ -7,7 +7,7 @@ class DDSignUp extends commando.Command{
       name: 'dd',
       group: 'events',
       memberName: 'dd',
-      description: 'Allows users to sign up as dd'
+      description: 'Allows users to sign up as dd, type !dd eventId'
     })
   }
 

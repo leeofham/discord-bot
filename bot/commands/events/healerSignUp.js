@@ -7,7 +7,7 @@ class HealerSignUp extends commando.Command{
       name: 'healer',
       group: 'events',
       memberName: 'healer',
-      description: 'Allows users to sign up as healer'
+      description: 'Allows users to sign up as healer, type: !healer eventId'
     })
   }
 
@@ -17,11 +17,11 @@ class HealerSignUp extends commando.Command{
 
     axios.get(`http://localhost:4000/events/${args}`)
 
-      .then(function signUpHealer(res){
+      .then(function signUpDD(res){
         const tanks = res.data.tanks
         const healers = res.data.healers
-        const dd = res.data.dds
-        if(tanks.indexOf(userId) && healers.indexOf(userId) && dd.indexOf(userId === -1)){
+        const dds = res.data.dds
+        if(tanks.indexOf(userId) && healers.indexOf(userId) && dds.indexOf(userId === -1)){
           const index = role.indexOf('Empty')
           if(index !== -1){
             role[index] = userId
@@ -30,7 +30,7 @@ class HealerSignUp extends commando.Command{
             message.channel.send(`There are no ${role} spots left`)
           }
           axios.put(`http://localhost:4000/events/${args}`, {
-            healers: role
+            healers: healers
           })
         } else {
           message.channel.send(`<@${userId}> You are already signed up!`)
