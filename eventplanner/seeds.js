@@ -8,8 +8,8 @@ mongoose.connect(dbUri, (err, db) => {
   return Event.create([{
     name: 'vSS Core Group',
     description: 'vSS Core Group run, Fire boss HM progression',
-    date: moment.utc('2019-07-03'),
-    startTime: '19:00',
+    date: moment.utc('2019-07-10 19:30').valueOf(),
+    startTime: '19:30',
     endTime: '22:00',
     reminder: ['1440', '480'],
     attendees: {
@@ -20,8 +20,8 @@ mongoose.connect(dbUri, (err, db) => {
   }, {
     name: 'vSS Core Group',
     description: 'vSS Core Group run, Fire boss HM progression',
-    date: moment.utc('2019-07-04'),
-    startTime: '19:00',
+    date: moment.utc('2019-07-11 20:30').valueOf(),
+    startTime: '20:30',
     endTime: '22:00',
     reminder: ['1440', '480'],
     attendees: {

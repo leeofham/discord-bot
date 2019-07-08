@@ -36,7 +36,7 @@ class getEvent extends commando.Command{
         message.channel.send(roster)
       })
       .catch(function error(){
-        message.channel.send('ERROR!! Abbs is gay, blame her for breaking me!')
+        message.channel.send('ERROR!! Wrong ID number!')
       })
   }
 }

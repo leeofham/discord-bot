@@ -19,7 +19,7 @@ class CreateEvent extends commando.Command{
 
     axios.post('http://localhost:4000/events/', {
       name: argsArray[0],
-      date: moment.utc(argsArray[1]),
+      date: moment.utc(`${argsArray[1]} ${argsArray[2]}`).valueOf(),
       startTime: argsArray[2],
       endTime: argsArray[3]
     })
