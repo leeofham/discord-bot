@@ -29,7 +29,7 @@ class HealerSignUp extends commando.Command{
             healers[index] = userId
             message.channel.send(`<@${userId}>, you have been added as a healer`)
           } else {
-            message.channel.send('There are no healers spots left')
+            message.channel.send(`<@${userId}> You are already signed up!`)
           }
           axios.put(`http://localhost:4000/events/${args}`, {
             healers: healers

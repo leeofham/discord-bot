@@ -29,7 +29,7 @@ class DDSignUp extends commando.Command{
             dds[index] = userId
             message.channel.send(`<@${userId}>, you have been added as a dd`)
           } else {
-            message.channel.send('There are no dds spots left')
+            message.channel.send(`<@${userId}> You are already signed up!` )
           }
           axios.put(`http://localhost:4000/events/${args}`, {
             dds: dds

@@ -27,9 +27,9 @@ class TankSignUp extends commando.Command{
           const index = tanks.indexOf('Empty')
           if(index !== -1){
             tanks[index] = userId
-            message.channel.send(`<@${userId}>, you have been added as a tank`)
+            message.channel.send(`<@${userId}> You have been added as a tank`)
           } else {
-            message.channel.send('There are no tanks spots left')
+            message.channel.send(`<@${userId}> There are no tanks spots left`)
           }
           axios.put(`http://localhost:4000/events/${args}`, {
             tanks: tanks
