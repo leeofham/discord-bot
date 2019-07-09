@@ -14,10 +14,10 @@ class TankSignUp extends commando.Command{
   }
 
   async run(message, args){
-    const userId = message.author.id
+    const argsArray = args.split(', ')
+    const userId = argsArray[1] || message.author.id
 
-    axios.get(`http://localhost:4000/events/${args}`)
-
+    axios.get(`http://localhost:4000/events/${argsArray[0]}`)
       .then(function signUpDD(res){
         const data = res.data
         const tanks = res.data.tanks
@@ -31,7 +31,7 @@ class TankSignUp extends commando.Command{
           } else {
             message.channel.send(`<@${userId}> There are no tanks spots left`)
           }
-          axios.put(`http://localhost:4000/events/${args}`, {
+          axios.put(`http://localhost:4000/events/${argsArray[0]}`, {
             tanks: tanks
           })
         } else {

@@ -14,11 +14,12 @@ class Signoff extends commando.Command{
   }
 
   async run(message, args){
-    const userId = message.author.id
+    const argsArray = args.split(', ')
+    const userId = argsArray[1] || message.author.id
 
     // get arrays, search arrays, find index of user id and change it to 'Empty'
 
-    axios.get(`http://localhost:4000/events/${args}`)
+    axios.get(`http://localhost:4000/events/${argsArray[0]}`)
 
       .then(function signoff(res){
         const data = res.data
@@ -29,7 +30,7 @@ class Signoff extends commando.Command{
           const tankIndex = tanks.indexOf(userId)
           if(tankIndex !== -1){
             tanks[tankIndex] = 'Empty'
-            axios.put(`http://localhost:4000/events/${args}`, {
+            axios.put(`http://localhost:4000/events/${argsArray[0]}`, {
               tanks: tanks
             })
             message.channel.send(`<@${userId}>, you are no longer signed up as a tank`)
@@ -38,7 +39,7 @@ class Signoff extends commando.Command{
           const healerIndex = healers.indexOf(userId)
           if(healerIndex !== -1){
             healers[healerIndex] = 'Empty'
-            axios.put(`http://localhost:4000/events/${args}`, {
+            axios.put(`http://localhost:4000/events/${argsArray[0]}`, {
               healers: healers
             })
             message.channel.send(`<@${userId}>, you are no longer signed up as a healer`)
@@ -47,7 +48,7 @@ class Signoff extends commando.Command{
           const ddIndex = dds.indexOf(userId)
           if(ddIndex !== -1){
             dds[ddIndex] = 'Empty'
-            axios.put(`http://localhost:4000/events/${args}`, {
+            axios.put(`http://localhost:4000/events/${argsArray[0]}`, {
               dds: dds
             })
             message.channel.send(`<@${userId}>, you are no longer signed up as a dd`)
