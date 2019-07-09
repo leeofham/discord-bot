@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
 const eventSchema = new mongoose.Schema({
+  _id: {type: String, required: true },
   name: {type: String, required: 'Please provide a name for the event' },
   description: {type: String},
   date: {type: Number, required: 'Please enter a date yyyy-mm-dd hh:mm'},

@@ -16,13 +16,14 @@ class CreateEvent extends commando.Command{
 
   async run(message, args){
     //args name, date yyyy-mm-dd, start time 24h, end time 24hr
-    const argsArray = args.split(',')
+    const argsArray = args.split(', ')
 
     axios.post('http://localhost:4000/events/', {
       name: argsArray[0],
-      date: moment.utc(`${argsArray[1]} ${argsArray[2]}`).valueOf(),
+      date: moment(`${argsArray[1]} ${argsArray[2]}`).valueOf(),
       startTime: argsArray[2],
-      endTime: argsArray[3]
+      endTime: argsArray[3],
+      _id: moment(argsArray[1]).format('DD.MM')
     })
       .then(function confirm(res){
         axios.get(`http://localhost:4000/events/${res.data._id}`)
@@ -37,7 +38,7 @@ class CreateEvent extends commando.Command{
               .setColor('#0099ff')
               .setTitle(`${data.name}`)
               .setAuthor('Bears Bot', 'https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
-              .setDescription(`${moment(data.date).local().format('DD MMMM YYYY hh:mm a')} (your local time)`)
+              .setDescription(`${moment(data.date).local().format('dddd DD MMMM YYYY HH:mm a')} (local time)`)
               .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
               .addField(`${data.description}`, '\u200b')
               .addField('Tanks', `1) <@${tanks[0]}>\n2) <@${tanks[1]}>`, true)

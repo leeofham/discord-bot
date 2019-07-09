@@ -41,7 +41,7 @@ class HealerSignUp extends commando.Command{
           .setColor('#0099ff')
           .setTitle(`${data.name}`)
           .setAuthor('Bears Bot', 'https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
-          .setDescription(`${moment(data.date).local().format('DD MMMM YYYY hh:mm a')} (your local time)`)
+          .setDescription(`${moment(data.date).local().format('dddd DD MMMM YYYY HH:mm a')} (local time)`)
           .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
           .addField(`${data.description}`, '\u200b')
           .addField('Tanks', `1) <@${tanks[0]}>\n2) <@${tanks[1]}>`, true)
