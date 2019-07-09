@@ -1,6 +1,7 @@
 const commando = require('discord.js-commando')
 const { RichEmbed } = require('discord.js')
 const axios = require('axios')
+const moment = require('moment')
 
 class getEvent extends commando.Command{
   constructor(client){
@@ -24,7 +25,7 @@ class getEvent extends commando.Command{
           .setColor('#0099ff')
           .setTitle(`${data.name}`)
           .setAuthor('Bears Bot', 'https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
-          .setDescription(`${data.date.substring(0,10)} at ${data.startTime}pm CEST`)
+          .setDescription(`${moment(data.date).local().format('DD MMMM YYYY hh:mm a')} (your local time)`)
           .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
           .addField(`${data.description}`, '\u200b')
           .addField('Tanks', `1) <@${tanks[0]}>\n2) <@${tanks[1]}>`, true)
