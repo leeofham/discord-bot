@@ -5,9 +5,9 @@ class AddReminder extends commando.Command{
   constructor(client){
     super(client, {
       name: 'reminder',
-      group: 'eventsadmin',
+      group: 'admin',
       memberName: 'reminder',
-      description: 'Allows user to add reminder for event, type !reminder eventId, "reminder times in seconds, more than one reminder separate with comma ," Admins only!',
+      description: '(Admins Only) Allows user to add reminder for event, type !reminder eventId, "reminder times in seconds, more than one reminder separate with comma ,"',
       userPermissions: ['ADMINISTRATOR']
     })
   }

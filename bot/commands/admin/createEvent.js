@@ -7,9 +7,9 @@ class CreateEvent extends commando.Command{
   constructor(client){
     super(client, {
       name: 'create',
-      group: 'eventsadmin',
+      group: 'admin',
       memberName: 'create',
-      description: 'Allows users to create event, Admins only',
+      description: '(Admins Only) Allows users to create event',
       userPermissions: ['ADMINISTRATOR']
     })
   }

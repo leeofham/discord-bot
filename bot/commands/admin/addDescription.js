@@ -5,9 +5,9 @@ class AddDescription extends commando.Command{
   constructor(client){
     super(client, {
       name: 'description',
-      group: 'eventsadmin',
+      group: 'admin',
       memberName: 'description',
-      description: 'Allows user to add description for event, type !description eventId, "whatever the description is" Admins only!',
+      description: '(Admins Only) Allows user to add description for event, type !description eventId, "whatever the description is"',
       userPermissions: ['ADMINISTRATOR']
     })
   }
