@@ -5,9 +5,9 @@ class AddDescription extends commando.Command{
   constructor(client){
     super(client, {
       name: 'description',
-      group: 'events',
+      group: 'eventsadmin',
       memberName: 'description',
-      description: 'Allows user to add description for event, type !description eventId, "whatever the description is"',
+      description: 'Allows user to add description for event, type !description eventId, "whatever the description is" Admins only!',
       userPermissions: ['ADMINISTRATOR']
     })
   }
@@ -22,9 +22,7 @@ class AddDescription extends commando.Command{
       .then(function confirm(res){
         message.channel.send(`You have successfully added the description "${res.data.description}"`)
       })
-      .catch(function error(){
-        message.channel.send('Opps, something went wrong!')
-      })
+      .catch(error => message.channel.send(`${error}`))
   }
 }
 

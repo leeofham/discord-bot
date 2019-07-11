@@ -5,9 +5,9 @@ class AddReminder extends commando.Command{
   constructor(client){
     super(client, {
       name: 'reminder',
-      group: 'events',
+      group: 'eventsadmin',
       memberName: 'reminder',
-      description: 'Allows user to add reminder for event, type !reminder eventId, "reminder times in seconds, more than one reminder separate with comma ,"',
+      description: 'Allows user to add reminder for event, type !reminder eventId, "reminder times in seconds, more than one reminder separate with comma ," Admins only!',
       userPermissions: ['ADMINISTRATOR']
     })
   }
@@ -22,9 +22,7 @@ class AddReminder extends commando.Command{
       .then(function confirm(res){
         message.channel.send(`You have successfully added the following reminder/s "${res.data.reminder}"`)
       })
-      .catch(function error(){
-        message.channel.send('Opps, something went wrong!')
-      })
+      .catch(error => message.channel.send(`${error}`))
   }
 }
 

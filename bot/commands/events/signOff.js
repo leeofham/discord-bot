@@ -22,6 +22,11 @@ class Signoff extends commando.Command{
     axios.get(`http://localhost:4000/events/${argsArray[0]}`)
 
       .then(function signoff(res){
+
+        if(!res.data){
+          message.channel.send(`${args} isn't a valid ID`)
+        }
+        
         const data = res.data
         const tanks = res.data.tanks
         const healers = res.data.healers

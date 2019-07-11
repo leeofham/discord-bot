@@ -7,9 +7,9 @@ class CreateEvent extends commando.Command{
   constructor(client){
     super(client, {
       name: 'create',
-      group: 'events',
+      group: 'eventsadmin',
       memberName: 'create',
-      description: 'Allows users to create event',
+      description: 'Allows users to create event, Admins only',
       userPermissions: ['ADMINISTRATOR']
     })
   }
@@ -50,9 +50,7 @@ class CreateEvent extends commando.Command{
             message.channel.send(event)
           })
       })
-      .catch(function error(){
-        message.channel.send('Please enter message with the following arguements separated by a comma and space. name, date ie yyyy-mm-dd, start time ie: HH:MM, finish time ie:HH:MM')
-      })
+      .catch(error => message.channel.send(`${error}`))
   }
 }
 

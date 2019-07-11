@@ -14,9 +14,13 @@ class getEvent extends commando.Command{
   }
 
   async run(message, args){
-    console.log(args + 'hello there')
     axios.get(`http://localhost:4000/events/${args}`)
       .then(function reply(res){
+
+        if(!res.data){
+          message.channel.send(`${args} isn't a valid ID`)
+        }
+        
         const data = res.data
         const tanks = res.data.tanks
         const healers = res.data.healers

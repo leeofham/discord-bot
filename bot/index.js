@@ -9,6 +9,7 @@ const bot = new commando.Client()
 
 bot.registry.registerGroup('random', 'Random')
 bot.registry.registerGroup('events', 'Events')
+bot.registry.registerGroup('eventsadmin', 'EventsAdmin')
 bot.registry.registerDefaults()
 bot.registry.registerCommandsIn(__dirname + '/commands')
 
