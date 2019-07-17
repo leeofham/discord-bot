@@ -23,13 +23,12 @@ class Purge extends commando.Command{
       return
     }
 
-    const total = parseInt(args)
-
     if(args === 'all'){
       message.delete()
       message.channel.bulkDelete(100)
         .catch(error => message.channel.send(`Error: ${error}`))
     } else {
+      const total = parseInt(args) + 1
       message.delete()
       message.channel.bulkDelete(total)
         .catch(error => message.channel.send(`Error: ${error}`))

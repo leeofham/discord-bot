@@ -11,7 +11,7 @@ class Hello extends commando.Command{
   }
 
   async run(message){
-    message.reply('Why hello there')
+    message.reply('Why hello there!')
   }
 }
 

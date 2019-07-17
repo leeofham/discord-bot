@@ -15,7 +15,8 @@ const eventSchema = new mongoose.Schema({
   dds: {type: Array, required: true, default: ['Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty', 'Empty']},
   reminder1hr: {type: Boolean, default: false},
   reminder8hr: {type: Boolean, default: false},
-  reminder24hr: {type: Boolean, default: false}
+  reminder24hr: {type: Boolean, default: false},
+  channel: {type: String}
 })
 
 eventSchema.plugin(uniqueValidator)
