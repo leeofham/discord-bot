@@ -10,15 +10,6 @@ Some sort repeated event,
 
 Some sort of loop for tanks, healers and dds in embedded messages
 
-
 Sort something out so that you can use embedded message in numerous files/folders
-
-
-Get event info posted to certain channels,
-  store channel id on database with event and then use that info to post to that channel
------
-if channel is deleted will cause some issues,
-  add function so that you can manually update the channel info
-
 
 Reminder messages
