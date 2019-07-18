@@ -25,7 +25,7 @@ class AddChannel extends commando.Command{
       message.channel.send(`Added channel ID ${argsArray[1]} to the event`)
 
     } else {
-      message.channel.send('Nope')
+      message.channel.send('Not a valid command, you may have missed a comma.')
     }
   }
 }

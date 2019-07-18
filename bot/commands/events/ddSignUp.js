@@ -21,13 +21,16 @@ class DDSignUp extends commando.Command{
       .then(function signUpDD(res){
         if(message.channel.id === res.data.channel){
           if(!res.data){
-            message.channel.send(`${args} isn't a valid ID`)
+            message.channel.send(`${argsArray[0]} isn't a valid ID`)
           }
 
           const data = res.data
           const tanks = res.data.tanks
           const healers = res.data.healers
           const dds = res.data.dds
+          const tankEmbed = []
+          const healerEmbed = []
+          const ddsEmbed = []
 
           if(tanks.indexOf(userId) && healers.indexOf(userId) && dds.indexOf(userId) === -1){
             const index = dds.indexOf('Empty')
@@ -43,6 +46,17 @@ class DDSignUp extends commando.Command{
           } else {
             message.channel.send(`<@${userId}> You are already signed up!`)
           }
+
+          for(let i = 0; i < tanks.length; i++){
+            tankEmbed[i] = `\n${i + 1}) <@${tanks[i]}>`
+          }
+          for(let i = 0; i < healers.length; i++){
+            healerEmbed[i] = `\n${i + 1}) <@${healers[i]}>`
+          }
+          for(let i = 0; i < dds.length; i++){
+            ddsEmbed[i] = `\n${i + 1}) <@${dds[i]}>`
+          }
+
           const roster = new RichEmbed()
             .setColor('#0099ff')
             .setTitle(`${data.name}`)
@@ -50,9 +64,9 @@ class DDSignUp extends commando.Command{
             .setDescription(`${moment(data.date).local().format('dddd DD MMMM YYYY HH:mm a')} (local time)`)
             .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
             .addField(`${data.description}`, '\u200b')
-            .addField('Tanks', `1) <@${tanks[0]}>\n2) <@${tanks[1]}>`, true)
-            .addField('Healers', `1) <@${healers[0]}>\n2) <@${healers[1]}`, true)
-            .addField('Damage Dealers', `1) <@${dds[0]}>\n2) <@${dds[1]}>\n3) <@${dds[2]}>\n4) <@${dds[3]}>\n5) <@${dds[4]}>\n6) <@${dds[5]}>\n7) <@${dds[6]}>\n8) <@${dds[7]}>`, true)
+            .addField('Tanks', `${tankEmbed}`, true)
+            .addField('Healers', `${healerEmbed}`, true)
+            .addField('Damage Dealers', `${ddsEmbed}`, true)
             .setTimestamp()
             .setFooter(`id: ${data._id}`)
 
