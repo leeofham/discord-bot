@@ -23,7 +23,7 @@ class CreateEvent extends commando.Command{
       date: moment(`${argsArray[1]} ${argsArray[2]}`).valueOf(),
       startTime: argsArray[2],
       endTime: argsArray[3],
-      _id: moment(argsArray[1]).format('DD.MM')
+      _id: moment(argsArray[1]).format('DD.MM.YY')
     })
       .then(function confirm(res){
         axios.get(`http://localhost:4000/events/${res.data._id}`)
@@ -50,9 +50,9 @@ class CreateEvent extends commando.Command{
             const event = new RichEmbed()
               .setColor('#0099ff')
               .setTitle(`${data.name}`)
-              .setAuthor('Bears Bot', 'https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
+              .setAuthor('Bears Bot', 'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NDg0MDYwNjkzMjY3OTgz/terry-crews-headshot-600x600jpg.jpg')
               .setDescription(`${moment(data.date).local().format('dddd DD MMMM YYYY HH:mm a')} (local time)`)
-              .setThumbnail('https://pixel.nymag.com/imgs/daily/vulture/2017/11/08/08-terry-crews.w330.h330.jpg')
+              .setThumbnail('https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NDg0MDYwNjkzMjY3OTgz/terry-crews-headshot-600x600jpg.jpg')
               .addField(`${data.description}`, '\u200b')
               .addField('Tanks', `${tankEmbed}`, true)
               .addField('Healers', `${healerEmbed}`, true)

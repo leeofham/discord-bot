@@ -23,7 +23,7 @@ class roleLimits extends commando.Command{
     axios.put(`http://localhost:4000/events/${argsArray[0]}`, {
       [role]: emptyArray
     })
-    message.channel.send(`The event has had the number of ${role}/s changed. Please sign up everyone who was signed up before the change`)
+    message.channel.send(`The event has had the number of ${role} changed. Please sign up everyone who was signed up before the change`)
   }
 }
 
