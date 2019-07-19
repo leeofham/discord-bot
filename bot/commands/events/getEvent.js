@@ -55,7 +55,7 @@ class getEvent extends commando.Command{
 
             message.channel.send(roster)
           } else{
-            message.channel.send('You cannot get this events info from this channel! Please use the correct channel!')
+            message.channel.send('You cannot get this events info from this channel! Please use the correct channel or double check the ID is correct.')
           }
         })
         .catch(function error(){

@@ -6,29 +6,29 @@ const moment = require('moment')
 mongoose.connect(dbUri, (err, db) => {
   db.dropDatabase()
   return Event.create([{
-    name: 'vSS Core Group',
-    description: 'vSS Core Group run, Fire boss HM progression',
-    date: moment.utc('2019-07-10 19:30').valueOf(),
-    startTime: '19:30',
-    endTime: '22:00',
-    reminder: ['1440', '480'],
-    attendees: {
-      tanks: ['leeofham', 'Alathil'],
-      healers: ['Shases', 'Knight30'],
-      dds: ['Grey', 'Abbervail', 'Chetter', 'Jayyab', 'Maninwhite', 'Arwen', 'Beyl', 'Fthis']
-    }
-  }, {
-    name: 'vSS Core Group',
-    description: 'vSS Core Group run, Fire boss HM progression',
-    date: moment.utc('2019-07-11 20:30').valueOf(),
+    _id: moment('2019-07-19').format('DD.MM.YY'),
+    name: 'Veteran Sunspire',
+    description: 'Farm/completion run. Please bring as much stamina dds as possible.',
+    date: moment('2019-07-19 14:00').valueOf(),
     startTime: '20:30',
-    endTime: '22:00',
-    reminder: ['1440', '480'],
-    attendees: {
-      tanks: ['leeofham', 'Alathil'],
-      healers: ['Shases', 'Knight30'],
-      dds: ['Grey', 'Abbervail', 'Chetter', 'Jayyab', 'Maninwhite', 'Arwen', 'Beyl', 'Fthis']
-    }
+    endTime: '22:30',
+    channel: '601751798662823936'
+  }, {
+    _id: moment('2019-07-25').format('DD.MM.YY'),
+    name: 'Veteran Sunspire',
+    description: 'Farm/completion run. Please bring as much stamina dds as possible.',
+    date: moment('2019-07-25 20:30').valueOf(),
+    startTime: '20:30',
+    endTime: '22:30',
+    channel: '601751798662823936'
+  }, {
+    _id: moment('2019-07-27').format('DD.MM.YY'),
+    name: 'Veteran Sunspire',
+    description: 'Farm/completion run. Please bring as much stamina dds as possible.',
+    date: moment('2019-07-27 20:30').valueOf(),
+    startTime: '20:30',
+    endTime: '22:30',
+    channel: '601751798662823936'
   }
   ])
 })

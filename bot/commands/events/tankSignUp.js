@@ -73,7 +73,6 @@ class TankSignUp extends commando.Command{
             .setTimestamp()
             .setFooter(`id: ${data._id}`)
           message.channel.send(roster)
-          console.log(tanks)
         } else {
           message.channel.send('You cannot sign up for this event here! Please use the correct channel.')
         }
