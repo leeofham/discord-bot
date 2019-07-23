@@ -227,13 +227,19 @@ This picks a random trial and whether its hardmode or a +1/+2 etc. The list of t
 
 ## Setting up event cheat sheet
 
-* !create EventName, YYYY-MM-DD, StartTime, EndTime
-
-* !description EventID, DescriptionText
-
-* !channel EventID, ChannelID
-
-* !edit EventID, FieldName, NewValue
-
+```
+!create EventName, YYYY-MM-DD, StartTime, EndTime
+```
+```
+!description EventID, DescriptionText
+```
+```
+!channel EventID, ChannelID
+```
+```
+!edit EventID, FieldName, NewValue
+```
 If you need to edit role signup limits.
-* !limit EventID, Role, LimitNumber
+```
+!limit EventID, Role, LimitNumber
+```
