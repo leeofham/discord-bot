@@ -10,6 +10,7 @@ const { RichEmbed } = require('discord.js')
 
 bot.registry.registerGroup('random', 'Random')
 bot.registry.registerGroup('events', 'Events')
+bot.registry.registerGroup('developer', 'Developer')
 bot.registry.registerGroup('admin', 'Admin')
 bot.registry.registerDefaults()
 bot.registry.registerCommandsIn(__dirname + '/commands')

@@ -7,7 +7,7 @@ class roleLimits extends commando.Command{
       name: 'limit',
       group: 'admin',
       memberName: 'limit',
-      description: '(Admins Only) Allows user to change number of roles allowed to sign up for an event. For example 3 tanks for vCR. Use {!limit eventId tanks/healers/dds, 3} to change sign ups of a role to 3',
+      description: '(Admins Only) Allows user to change number of roles allowed to sign up for an event. For example 3 tanks for vCR. Use !limit eventId tanks/healers/dds, 3 to change sign ups of a role to 3',
       userPermissions: ['ADMINISTRATOR']
     })
   }

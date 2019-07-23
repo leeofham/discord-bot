@@ -9,23 +9,31 @@ class Signoff extends commando.Command{
       name: 'signoff',
       group: 'events',
       memberName: 'signoff',
-      description: 'Allows users to sign off raid. !signoff eventId'
+      description: 'Allows users to sign off raid. Admin can signoff anyone, Users can only sign themselves off. !signoff eventId'
     })
   }
 
   async run(message, args){
     const argsArray = args.split(', ')
-    const userId = argsArray[1] || message.author.id
+    let userId
 
-    // get arrays, search arrays, find index of user id and change it to 'Empty'
+    if (message.member.hasPermission('ADMINISTRATOR')){
+      userId = argsArray[1] || message.author.id
+    } else {
+      if(argsArray[1]){
+        message.channel.send('Only admins can sign up others.')
+        return
+      } else {
+        userId = message.author.id
+      }
+    }
 
     axios.get(`http://localhost:4000/events/${argsArray[0]}`)
-
       .then(function signoff(res){
-        if(message.channel.id === res.data.channel){
-          if(!res.data){
-            message.channel.send(`${args} isn't a valid ID`)
-          }
+
+        if(!res.data){
+          message.channel.send(`${args} isn't a valid ID`)
+        } else if(message.channel.id === res.data.channel){
 
           const data = res.data
           const tanks = res.data.tanks

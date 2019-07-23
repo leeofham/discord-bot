@@ -5,7 +5,7 @@ class AddChannel extends commando.Command{
   constructor(client){
     super(client, {
       name: 'channel',
-      group: 'random',
+      group: 'admin',
       memberName: 'channel',
       description: '(Admins Only) Add the channel for the messages to be sent to, type !addChannel eventID, channelID',
       userPermissions: ['ADMINISTRATOR']

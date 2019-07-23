@@ -6,7 +6,7 @@ class Edit extends commando.Command{
   constructor(client){
     super(client, {
       name: 'edit',
-      group: 'random',
+      group: 'admin',
       memberName: 'edit',
       description: '(Admins Only) Allows user to edit field of event. Bare in mind if you change the date the ID remains the same, for instance to change name type !edit eventID, name, newNameValue',
       userPermissions: ['ADMINISTRATOR']

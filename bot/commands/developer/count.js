@@ -4,7 +4,7 @@ class Count extends commando.Command{
   constructor(client){
     super(client, {
       name: 'count',
-      group: 'random',
+      group: 'developer',
       memberName: 'count',
       description: '(Admins Only) Counts up to number given as argument, used for testing purge',
       userPermissions: ['ADMINISTRATOR']

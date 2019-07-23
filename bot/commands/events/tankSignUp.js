@@ -15,7 +15,18 @@ class TankSignUp extends commando.Command{
 
   async run(message, args){
     const argsArray = args.split(', ')
-    const userId = argsArray[1] || message.author.id
+    let userId
+
+    if (message.member.hasPermission('ADMINISTRATOR')){
+      userId = argsArray[1] || message.author.id
+    } else {
+      if(argsArray[1]){
+        message.channel.send('Only admins can sign up others.')
+        return
+      } else {
+        userId = message.author.id
+      }
+    }
 
     axios.get(`http://localhost:4000/events/${argsArray[0]}`)
       .then(function signUpTank(res){

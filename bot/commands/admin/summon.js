@@ -4,7 +4,7 @@ class Summon extends commando.Command{
   constructor(client){
     super(client, {
       name: 'summon',
-      group: 'random',
+      group: 'admin',
       memberName: 'summon',
       description: '(Admins Only) Summons a person a number of times, maximum 10 to stop trolling',
       userPermissions: ['ADMINISTRATOR']

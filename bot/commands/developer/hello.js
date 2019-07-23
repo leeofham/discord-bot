@@ -4,9 +4,9 @@ class Hello extends commando.Command{
   constructor(client){
     super(client, {
       name: 'hello',
-      group: 'random',
+      group: 'developer',
       memberName: 'hello',
-      description: 'Says hello back'
+      description: 'Says hello back to test bot is working.'
     })
   }
 
