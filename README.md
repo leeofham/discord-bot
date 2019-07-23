@@ -25,7 +25,9 @@ Use your local time when creating events, the bot converts times to users local 
 
 ### Create example
 
+```
 !create Veteran Cloudrest, 2019-01-01, 20:30, 22:30
+```
 
 This will create an event on 1st January 2019 called Cloudrest and will start at 20:30 (UK time) and finish at 22:30.
 
@@ -38,7 +40,9 @@ Adding a description requires two parameters.
 
 ### Add a description example
 
+```
 !description 01.01.19, Cloudrest + 3 progression run. Bring Magicka DDs.
+```
 
 ### Add a channel to an event
 
@@ -51,7 +55,9 @@ Channels require two parameters.
 
 ### Add a channel to an event example
 
+```
 !channel 01.01.19, 123456.
+```
 
 ### Editing role signup limits for an event
 
@@ -65,8 +71,10 @@ To change the limits on the roles it requires 3 parameters
 
 ### Changing role signup limits for an event example
 
+```
 !limit 01.01.19, tanks, 3
 !limit 01.01.19, dds, 7
+```
 
 ## Signing up
 
@@ -80,7 +88,9 @@ To sign yourself up for an event is pretty simple. There are 3 keywords to use a
 
 ### Signing yourself up for a role example
 
+```
 !tank 01.01.2019
+```
 
 This will sign myself up as a tank. If there aren't any sign up space available the bot will post an error message in chat.
 
@@ -90,7 +100,9 @@ This the exact same as signing yourself up but requires an extra parameter which
 
 ### Admin Only! Signing others up for a role example
 
+```
 !tank 01.01.2019, 123456
+```
 
 This will sign user 123456 up as a tank if there is space available.
 
@@ -102,7 +114,9 @@ This uses one parameter which is the event ID.
 
 ### Signing yourself up for a role example
 
+```
 !signoff 01.01.2019
+```
 
 This will sign myself off the event and create an empty space for other users to sign up.
 
@@ -112,7 +126,9 @@ This the exact same as signing yourself off an event but requires an extra param
 
 ### Admin Only! Signing others up for a role example
 
+```
 !signoff 01.01.2019, 123456
+```
 
 This will sign off user 123456.
 
@@ -137,7 +153,9 @@ This takes 3 parameters
 
 ### Admin Only! Editing an event field example
 
+```
 !edit name, Veteran Hel Ra Citadel(formerly Cloudrest)
+```
 
 The name will change from Cloudrest to Veteran Hel Ra Citadel(formerly Cloudrest).
 
@@ -149,21 +167,27 @@ This will delete a number of messages from the channel is was used in. The param
 
 ### Purge example
 
+```
 !purge 50
+```
 
 ### Admin Only! Summon
 
 This will spam a user up to 10 times get their attention. This takes two parameters users ID and number of messages.
 
 ### Summon example
+```
 !summon 12345, 3
+```
 
 ### Dice (random number generator)
 
 This will generate a random number between 0 and the number you enter as a parameter.
 
 ### Dice example
+```
 !roll 15
+```
 
 ### Math calculator
 
@@ -175,15 +199,18 @@ Simple calculator, the symbols are
 * \/ for division
 
 ### Math example
+```
 !math 15 + 15
+```
 
 ### Trial picker
 
 This picks a random trial and whether its hardmode or a +1/+2 etc. The list of trials is up to date as of Elsweyr patch.
 
 ### Trial picker example
-
+```
 !trial
+```
 
 ## To do
 
