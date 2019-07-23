@@ -126,8 +126,8 @@ This takes 3 parameters
 * Field Name you wish to edit
 * New value for the field
 
-The field names are
--
+### Field names
+
 * name
 * description
 * date
