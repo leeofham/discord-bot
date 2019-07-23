@@ -212,19 +212,6 @@ This picks a random trial and whether its hardmode or a +1/+2 etc. The list of t
 !trial
 ```
 
-## To do
-
-* Rework code so that embedded message can work in numerous files/folders
-
-* Add a way to toggle whether the event will reoccur or not
-
-* Refactor code
-
-* Deploy project
-
-* Write inital patch notes
-
-
 ## Setting up event cheat sheet
 
 ```
@@ -243,3 +230,15 @@ If you need to edit role signup limits.
 ```
 !limit EventID, Role, LimitNumber
 ```
+
+## To do
+
+* Rework code so that embedded message can work in numerous files/folders
+
+* Add a way to toggle whether the event will reoccur or not
+
+* Refactor code
+
+* Deploy project
+
+* Write inital patch notes
