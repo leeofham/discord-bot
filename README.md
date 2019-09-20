@@ -237,8 +237,8 @@ If you need to edit role signup limits.
 
 * Add a way to toggle whether the event will reoccur or not
 
+* Make an index.html page with instructions on how to use.
+
 * Refactor code
 
 * Deploy project
-
-* Write inital patch notes
